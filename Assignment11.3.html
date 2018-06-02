@@ -1,0 +1,37 @@
+<!-- This assignment helps you to master the concepts of DOM API  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 11.3</title>
+</head>
+<body id="body"> 
+    <a id="google" target="_self" href="https://www.w3resource.com/" >Google</a> 
+    <div id="attrs"></div>
+    <button onclick="return showattributes()"> Show attributes of Link</button>
+    <button onclick="return removehtml()">Remove Result</button>
+
+    <script>
+    function showattributes() //Function showattribute to get the attributes of the anchor tag.
+    {
+    var divs= document.getElementById("attrs");
+    var IDs= document.getElementById("google").id;
+    var anchor= document.getElementById("google").getAttribute("target").toString();
+    var Hrefs= document.getElementById("google").getAttribute("href").toString();
+    
+    divs.innerHTML= " <br/> Id Attribute of Anchor tab and its value : " + IDs; //The values of the attributes are displayed in the div tag
+    divs.innerHTML += " <br/> Target Attribute of Anchor tab and its value : " + anchor;
+    divs.innerHTML +=" <br/> Href Attribute of Anchor tab and its value : " + Hrefs;
+    }
+
+    function removehtml() //Function to remove the html of div with id attrs when button with text Remove Result is clicked
+    {
+    var parent = document.getElementById("body");
+    var child = document.getElementById("attrs");
+    parent.removeChild(child);// calling the remove child method to remove the Div tag from Body
+    }
+    </script>
+</body>
+</html>
